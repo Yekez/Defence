@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BlueArmySound.ogg-002c255d476188dbfbdd11157fe4afd2.oggstr"
+
+[deps]
+
+source_file="res://SFX/BlueArmySound.ogg"
+dest_files=[ "res://.import/BlueArmySound.ogg-002c255d476188dbfbdd11157fe4afd2.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

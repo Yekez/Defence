@@ -1,0 +1,453 @@
+[gd_scene load_steps=57 format=2]
+
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/MessengerMap.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum1Clicked.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/MessengerScripts/zonebuttons.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum1Unclicked.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum2Unclicked.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum2Clicked.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum4Clicked.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum1Clicked.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum2Clicked.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum2Unclicked.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum4Unclicked.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum3Unclicked.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapKirmiziBolum3Clicked.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum1Unclicked.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum6Clicked.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum3Clicked.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum3Unclicked.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum5Clicked.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum4Clicked.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum4Clicked.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum3Unclicked.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum1Clicked.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum4Unclicked.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum5Unclicked.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum3Clicked.png" type="Texture" id=25]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum4Unclicked.png" type="Texture" id=26]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapMaviBolum6Unclicked.png" type="Texture" id=27]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum1Unclicked.png" type="Texture" id=28]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum2Unclicked.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/Buttons/MapSariBolum2Clicked.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/BackButton.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/MaviBayrak.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/KirmiziBayrak.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/ReputationPenceresi.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/FireAnimation.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/ReputationPenceresiSari.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/SariBayrak.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/ReputationPenceresiMavi.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/ReputationPenceresiKirmizi.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/ProgressBarCercevesi.png" type="Texture" id=40]
+[ext_resource path="res://Scripts/MessengerMap.gd" type="Script" id=41]
+[ext_resource path="res://Prefabs/MessengerPrefabs/CallSupport.tscn" type="PackedScene" id=42]
+[ext_resource path="res://SFX/MessengerAttackNew.ogg" type="AudioStream" id=43]
+[ext_resource path="res://Prefabs/MessengerChat.tscn" type="PackedScene" id=44]
+
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 35 )
+region = Rect2( 0, 0, 17, 20 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 35 )
+region = Rect2( 17, 0, 17, 20 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 35 )
+region = Rect2( 34, 0, 17, 20 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 35 )
+region = Rect2( 51, 0, 17, 20 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 35 )
+region = Rect2( 68, 0, 17, 20 )
+
+[sub_resource type="SpriteFrames" id=6]
+animations = [ {
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ) ],
+"loop": true,
+"name": "default",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=7]
+offsets = PoolRealArray( 0.207407 )
+colors = PoolColorArray( 0.741176, 0.447059, 0.341176, 1 )
+
+[sub_resource type="GradientTexture" id=8]
+gradient = SubResource( 7 )
+
+[sub_resource type="Gradient" id=9]
+offsets = PoolRealArray( 1 )
+colors = PoolColorArray( 0.509804, 0.67451, 0.831373, 1 )
+
+[sub_resource type="GradientTexture" id=10]
+gradient = SubResource( 9 )
+
+[sub_resource type="Gradient" id=11]
+offsets = PoolRealArray( 0.348148 )
+colors = PoolColorArray( 0.996078, 0.870588, 0.180392, 1 )
+
+[sub_resource type="GradientTexture" id=12]
+gradient = SubResource( 11 )
+
+[node name="MessengerMap" type="Node2D"]
+scale = Vector2( 0.85, 0.75 )
+script = ExtResource( 41 )
+
+[node name="MessengerMapCam" type="Camera2D" parent="."]
+scale = Vector2( 1, 1.64 )
+zoom = Vector2( 1.1, 1.1 )
+
+[node name="MessengerMap" type="Sprite" parent="."]
+texture = ExtResource( 1 )
+
+[node name="ZoneButtons" type="Node2D" parent="MessengerMap"]
+
+[node name="k1" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"redzone",
+]]
+visible = false
+position = Vector2( 4.98659, 2.98808 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="Fire" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/k1"]
+position = Vector2( 8.87644, 5.27038 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 3
+playing = true
+
+[node name="k2" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"redzone",
+]]
+visible = false
+position = Vector2( 14.0493, 6.01458 )
+normal = ExtResource( 5 )
+pressed = ExtResource( 6 )
+script = ExtResource( 3 )
+
+[node name="Fire2" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/k2"]
+position = Vector2( 13.6831, 11.3977 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="k3" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"redzone",
+]]
+visible = false
+position = Vector2( 34.9982, 6.00678 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 13 )
+script = ExtResource( 3 )
+
+[node name="Fire3" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/k3"]
+position = Vector2( 22.4148, 11.4055 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="k4" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"redzone",
+]]
+visible = false
+position = Vector2( 24.9876, -4.90029 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 7 )
+script = ExtResource( 3 )
+
+[node name="Fire4" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/k4"]
+position = Vector2( 21.6073, 2.0632 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="m1" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"bluezone",
+]]
+visible = false
+position = Vector2( 49.9123, -25.9819 )
+normal = ExtResource( 14 )
+pressed = ExtResource( 8 )
+script = ExtResource( 3 )
+
+[node name="Fire5" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/m1"]
+position = Vector2( 7.77818, 8.44323 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="m2" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"bluezone",
+]]
+visible = false
+position = Vector2( 17.0466, -30.9846 )
+normal = ExtResource( 10 )
+pressed = ExtResource( 9 )
+script = ExtResource( 3 )
+
+[node name="Fire6" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/m2"]
+position = Vector2( 17.3432, 5.95641 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="m3" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"bluezone",
+]]
+visible = false
+position = Vector2( -19.0336, -33.0473 )
+normal = ExtResource( 21 )
+pressed = ExtResource( 25 )
+script = ExtResource( 3 )
+
+[node name="Fire7" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/m3"]
+position = Vector2( 11.8151, 9.40601 )
+z_index = 1
+frames = SubResource( 6 )
+playing = true
+
+[node name="m4" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"bluezone",
+]]
+visible = false
+position = Vector2( -38.0444, -45.082 )
+normal = ExtResource( 26 )
+pressed = ExtResource( 20 )
+script = ExtResource( 3 )
+
+[node name="Fire8" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/m4"]
+position = Vector2( 11.9634, 13.6738 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 4
+playing = true
+
+[node name="m5" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"bluezone",
+]]
+visible = false
+position = Vector2( -13.0391, -43.9429 )
+normal = ExtResource( 24 )
+pressed = ExtResource( 18 )
+script = ExtResource( 3 )
+
+[node name="Fire9" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/m5"]
+position = Vector2( 12.254, 5.08279 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 3
+playing = true
+
+[node name="m6" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"bluezone",
+]]
+visible = false
+position = Vector2( 23.9361, -42.0005 )
+normal = ExtResource( 27 )
+pressed = ExtResource( 15 )
+script = ExtResource( 3 )
+
+[node name="Fire10" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/m6"]
+position = Vector2( 8.99527, 2.60106 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="s1" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"yellowzone",
+]]
+visible = false
+position = Vector2( -66.9574, 5.06747 )
+normal = ExtResource( 28 )
+pressed = ExtResource( 22 )
+script = ExtResource( 3 )
+
+[node name="Fire11" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/s1"]
+position = Vector2( 19.3615, 4.40274 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 2
+playing = true
+
+[node name="s2" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"yellowzone",
+]]
+visible = false
+position = Vector2( -47.0254, 10.023 )
+normal = ExtResource( 29 )
+pressed = ExtResource( 30 )
+script = ExtResource( 3 )
+
+[node name="Fire12" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/s2"]
+position = Vector2( 16.6415, 10.512 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 1
+playing = true
+
+[node name="s3" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"yellowzone",
+]]
+visible = false
+position = Vector2( -15.1024, 15.0272 )
+normal = ExtResource( 17 )
+pressed = ExtResource( 16 )
+script = ExtResource( 3 )
+
+[node name="Fire13" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/s3"]
+position = Vector2( 13.3026, 8.27403 )
+z_index = 1
+frames = SubResource( 6 )
+playing = true
+
+[node name="s4" type="TouchScreenButton" parent="MessengerMap/ZoneButtons" groups=[
+"yellowzone",
+]]
+visible = false
+position = Vector2( -24.0129, 2.02507 )
+normal = ExtResource( 23 )
+pressed = ExtResource( 19 )
+script = ExtResource( 3 )
+
+[node name="Fire14" type="AnimatedSprite" parent="MessengerMap/ZoneButtons/s4"]
+position = Vector2( 13.2997, 2.52744 )
+z_index = 1
+frames = SubResource( 6 )
+frame = 4
+playing = true
+
+[node name="MaviBayrak" type="Sprite" parent="MessengerMap"]
+position = Vector2( -7.46488, -48.1979 )
+texture = ExtResource( 32 )
+
+[node name="KirmiziBayrak" type="Sprite" parent="MessengerMap"]
+position = Vector2( 39.6912, -0.372948 )
+texture = ExtResource( 33 )
+
+[node name="SariBayrak" type="Sprite" parent="MessengerMap"]
+position = Vector2( -31.5282, 1.80592 )
+texture = ExtResource( 37 )
+
+[node name="BackButton" type="TouchScreenButton" parent="."]
+position = Vector2( -75.6882, 40.8942 )
+normal = ExtResource( 31 )
+pressed = ExtResource( 31 )
+
+[node name="ReputationWindow" type="Node2D" parent="."]
+
+[node name="ReputationPenceresi" type="Sprite" parent="ReputationWindow"]
+visible = false
+position = Vector2( -62.62, -43.7176 )
+texture = ExtResource( 34 )
+
+[node name="ReputationPenceresiKirmizi" type="Sprite" parent="ReputationWindow" groups=[
+"Red",
+]]
+visible = false
+position = Vector2( -62.62, -43.7176 )
+texture = ExtResource( 39 )
+
+[node name="kirmiziprog" type="TextureProgress" parent="ReputationWindow/ReputationPenceresiKirmizi"]
+margin_left = -17.2152
+margin_top = -9.8206
+margin_right = 0.784798
+margin_bottom = 4.1794
+rect_scale = Vector2( 2.43768, 0.214132 )
+texture_progress = SubResource( 8 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBarCercevesi" type="Sprite" parent="ReputationWindow/ReputationPenceresiKirmizi"]
+position = Vector2( 5.88696, -8.42944 )
+scale = Vector2( 0.953672, 1 )
+texture = ExtResource( 40 )
+
+[node name="CallRed" parent="ReputationWindow/ReputationPenceresiKirmizi" instance=ExtResource( 42 )]
+visible = false
+position = Vector2( -18.9804, -1.97507 )
+
+[node name="ReputationPenceresiMavi" type="Sprite" parent="ReputationWindow" groups=[
+"Blue",
+]]
+visible = false
+position = Vector2( -62.62, -43.7885 )
+texture = ExtResource( 38 )
+
+[node name="maviprog" type="TextureProgress" parent="ReputationWindow/ReputationPenceresiMavi"]
+margin_left = -17.2152
+margin_top = -9.74963
+margin_right = 0.784798
+margin_bottom = 4.25037
+rect_scale = Vector2( 2.43768, 0.214132 )
+max_value = 200.0
+texture_progress = SubResource( 10 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBarCercevesi2" type="Sprite" parent="ReputationWindow/ReputationPenceresiMavi"]
+position = Vector2( 5.88696, -8.35847 )
+scale = Vector2( 0.953672, 1 )
+texture = ExtResource( 40 )
+
+[node name="CallBlue" parent="ReputationWindow/ReputationPenceresiMavi" instance=ExtResource( 42 )]
+visible = false
+position = Vector2( -18.9804, -1.90416 )
+
+[node name="ReputationPenceresiSari" type="Sprite" parent="ReputationWindow" groups=[
+"Yellow",
+]]
+position = Vector2( -62.62, -43.7176 )
+texture = ExtResource( 36 )
+
+[node name="sariprog" type="TextureProgress" parent="ReputationWindow/ReputationPenceresiSari"]
+margin_left = -17.2152
+margin_top = -9.8206
+margin_right = 0.784798
+margin_bottom = 4.1794
+rect_scale = Vector2( 2.43768, 0.214132 )
+texture_progress = SubResource( 12 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ProgressBarCercevesi3" type="Sprite" parent="ReputationWindow/ReputationPenceresiSari"]
+position = Vector2( 5.88696, -8.42944 )
+scale = Vector2( 0.953672, 1 )
+texture = ExtResource( 40 )
+
+[node name="CallYellow" parent="ReputationWindow/ReputationPenceresiSari" instance=ExtResource( 42 )]
+visible = false
+position = Vector2( -18.9804, -1.97507 )
+
+[node name="Alert" type="Node2D" parent="."]
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 30.0
+
+[node name="MessengerAttackAlert" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 43 )
+volume_db = -20.0
+
+[node name="MessengerInterface2" parent="." instance=ExtResource( 44 )]
+position = Vector2( 57.8314, 46.4931 )
+scale = Vector2( 0.75, 0.75 )
+[connection signal="pressed" from="BackButton" to="." method="_on_BackButton_pressed" flags=3]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout" flags=3]

@@ -1,0 +1,9 @@
+[gd_scene format=2]
+
+[node name="UnitTentPopup" type="Popup"]
+margin_right = 40.0
+margin_bottom = 40.0
+popup_exclusive = true
+__meta__ = {
+"_edit_use_anchors_": false
+}

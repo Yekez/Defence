@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/YellowArmySound.ogg-5fc3dc568cf2d563ee3773fcca40fe51.oggstr"
+
+[deps]
+
+source_file="res://SFX/YellowArmySound.ogg"
+dest_files=[ "res://.import/YellowArmySound.ogg-5fc3dc568cf2d563ee3773fcca40fe51.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

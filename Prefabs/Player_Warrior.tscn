@@ -1,0 +1,285 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://Sprites/WarriorPlayerAttack.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/WarriorPlayerIdle.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/WarriorPlayerWalk.png" type="Texture" id=3]
+[ext_resource path="res://SFX/Attack.wav" type="AudioStream" id=4]
+[ext_resource path="res://Scripts/Player_Warrior.gd" type="Script" id=5]
+[ext_resource path="res://Prefabs/MainCamArcher.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSol.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/WarriorAttackButton.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSag.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Lv2Army/+5gold.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSolClicked.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSagClicked.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/coin.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/MusicOn.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/WarriorAttackButtonClicked.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/MusicOff.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Interface1/WarriorHpBar.png" type="Texture" id=17]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.52428, 4.59593 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 27, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 54, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 81, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 108, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 135, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 3 )
+region = Rect2( 27, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 3 )
+region = Rect2( 54, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 3 )
+region = Rect2( 81, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 3 )
+region = Rect2( 108, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 3 )
+region = Rect2( 135, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 27, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 54, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 81, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 108, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 135, 0, 27, 16 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 162, 0, 27, 16 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 2 ) ],
+"loop": true,
+"name": "Attack",
+"speed": 7.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=22]
+offsets = PoolRealArray( 0, 0.00571429 )
+
+[sub_resource type="GradientTexture" id=23]
+gradient = SubResource( 22 )
+
+[sub_resource type="Gradient" id=24]
+offsets = PoolRealArray( 0.954286, 1 )
+colors = PoolColorArray( 0.734375, 0.0401611, 0.0401611, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=25]
+gradient = SubResource( 24 )
+
+[sub_resource type="RectangleShape2D" id=26]
+extents = Vector2( 3.62358, 5.15715 )
+
+[sub_resource type="RectangleShape2D" id=27]
+extents = Vector2( 5.75613, 5.49498 )
+
+[sub_resource type="Animation" id=28]
+resource_name = "Healing"
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+"PlayerWarrior",
+]]
+z_index = 10
+z_as_relative = false
+collision_layer = 540672
+collision_mask = 540736
+script = ExtResource( 5 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.774002, 1.39997 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 4 )
+volume_db = -14.076
+pitch_scale = 1.09
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 21 )
+animation = "Attack"
+
+[node name="ProgressBar" type="TextureProgress" parent="."]
+margin_left = -50.5417
+margin_top = -44.4504
+margin_right = 1573.46
+margin_bottom = -42.4504
+rect_scale = Vector2( 0.0117013, 0.552702 )
+max_value = 30.0
+value = 30.0
+texture_under = SubResource( 23 )
+texture_progress = SubResource( 25 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="plus5tween" type="Tween" parent="."]
+
+[node name="plus5" type="Sprite" parent="."]
+modulate = Color( 0.717647, 0.721569, 0.0745098, 0 )
+position = Vector2( 0.00878668, -9.69336 )
+texture = ExtResource( 10 )
+
+[node name="coin" type="Sprite" parent="plus5"]
+position = Vector2( 6.774, 0 )
+scale = Vector2( 0.24, 0.28 )
+texture = ExtResource( 13 )
+region_enabled = true
+region_rect = Rect2( 183, 2, 12, 14 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
+[node name="CamNode" type="Node2D" parent="."]
+position = Vector2( -30, 0 )
+
+[node name="TouchButtons" type="Node2D" parent="CamNode"]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Left" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( -77.0969, 45.1929 )
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 11 )
+action = "left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( -11.3237, 45.0516 )
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 12 )
+action = "right"
+visibility_mode = 1
+
+[node name="Attack" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( 320, 31.5246 )
+scale = Vector2( 1.65041, 1.54169 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 15 )
+action = "shoot"
+visibility_mode = 1
+
+[node name="Mute" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( 337.544, -178.957 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 16 )
+
+[node name="Unmute" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+visible = false
+position = Vector2( 344.775, -180.007 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 14 )
+
+[node name="Camera2D2" parent="CamNode" instance=ExtResource( 6 )]
+position = Vector2( 50, -14 )
+
+[node name="DefendingArea" type="Area2D" parent="." groups=[
+"Unit",
+]]
+position = Vector2( 0.157494, 0 )
+collision_layer = 2147516672
+collision_mask = 32768
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DefendingArea"]
+position = Vector2( -0.206753, 0.827011 )
+shape = SubResource( 26 )
+
+[node name="Timer" type="Timer" parent="."]
+autostart = true
+
+[node name="HealCheck" type="Area2D" parent="."]
+position = Vector2( -0.198425, -2.18268 )
+collision_layer = 0
+collision_mask = 16384
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HealCheck"]
+shape = SubResource( 27 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/Healing = SubResource( 28 )
+
+[node name="WarriorHpBar" type="Sprite" parent="."]
+position = Vector2( -44.6984, -44.0876 )
+scale = Vector2( 0.357657, 0.333538 )
+texture = ExtResource( 17 )
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished" flags=3]
+[connection signal="pressed" from="CamNode/TouchButtons/Mute" to="." method="_on_Mute_pressed" flags=3]
+[connection signal="pressed" from="CamNode/TouchButtons/Unmute" to="." method="_on_Unmute_pressed" flags=3]
+[connection signal="area_entered" from="DefendingArea" to="." method="_on_DefendingArea_area_entered" flags=3]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout" flags=3]

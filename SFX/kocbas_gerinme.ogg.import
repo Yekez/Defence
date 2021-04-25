@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kocbas_gerinme.ogg-91085faab3dd6c3bdfc0502209e0659e.oggstr"
+
+[deps]
+
+source_file="res://SFX/kocbas_gerinme.ogg"
+dest_files=[ "res://.import/kocbas_gerinme.ogg-91085faab3dd6c3bdfc0502209e0659e.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

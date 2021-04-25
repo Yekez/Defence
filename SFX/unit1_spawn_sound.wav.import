@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/unit1_spawn_sound.wav-bb9e0883d3792361d08d5798a6ec4922.sample"
+
+[deps]
+
+source_file="res://SFX/unit1_spawn_sound.wav"
+dest_files=[ "res://.import/unit1_spawn_sound.wav-bb9e0883d3792361d08d5798a6ec4922.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

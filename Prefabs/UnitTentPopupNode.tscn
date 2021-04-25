@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Prefabs/UnitTentUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Sprites/Map/ArmyLv1.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/UnitTentPopup.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/BackButton.png" type="Texture" id=4]
+
+[sub_resource type="CircleShape2D" id=1]
+radius = 23.9402
+
+[sub_resource type="Animation" id=2]
+resource_name = "ArrowBounceBarracks"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("spot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 19.5405, -16.1748 ), Vector2( 19.541, -14.175 ), Vector2( 19.5405, -16.1748 ) ]
+}
+
+[node name="UnitTentPopupNode" type="TouchScreenButton"]
+self_modulate = Color( 1, 1, 1, 0 )
+normal = ExtResource( 2 )
+script = ExtResource( 3 )
+
+[node name="UnitTentUI" parent="." instance=ExtResource( 1 )]
+visible = false
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = -15.9454
+margin_top = -38.9257
+margin_right = 103.055
+margin_bottom = 17.0743
+
+[node name="spot" type="Sprite" parent="."]
+position = Vector2( 19.5405, -16.1748 )
+rotation = 4.71239
+scale = Vector2( 0.395947, 0.391376 )
+texture = ExtResource( 4 )
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+position = Vector2( 19.4063, -2.13649 )
+scale = Vector2( 0.68, 1 )
+collision_layer = 16385
+collision_mask = 16385
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource( 1 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ArrowBounceBarracks = SubResource( 2 )
+[connection signal="pressed" from="." to="." method="_on_UnitTentPopupNode_pressed" flags=3]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered" flags=3]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited" flags=3]

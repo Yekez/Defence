@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/kocbas_attack.ogg-0445b52d42a5f45f2d30e47ec94f9003.oggstr"
+
+[deps]
+
+source_file="res://SFX/kocbas_attack.ogg"
+dest_files=[ "res://.import/kocbas_attack.ogg-0445b52d42a5f45f2d30e47ec94f9003.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

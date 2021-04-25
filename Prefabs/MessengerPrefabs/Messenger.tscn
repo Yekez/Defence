@@ -1,0 +1,274 @@
+[gd_scene load_steps=52 format=2]
+
+[ext_resource path="res://Sprites/Messenger/AllyUnitler&MessengerAllAnim/MessengerIdle.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Messenger/AllyUnitler&MessengerAllAnim/MessengerWalk.png" type="Texture" id=2]
+[ext_resource path="res://Scripts/Messenger.gd" type="Script" id=3]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/BackButton.png" type="Texture" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 10.0167, 8.97363 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 12.5576, 9.04618 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 25, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 50, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 75, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 100, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 125, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 150, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 175, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 200, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 225, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 25, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 1 )
+region = Rect2( 50, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 1 )
+region = Rect2( 75, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 1 )
+region = Rect2( 100, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 1 )
+region = Rect2( 125, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 1 )
+region = Rect2( 150, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 1 )
+region = Rect2( 175, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 1 )
+region = Rect2( 200, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 1 )
+region = Rect2( 225, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 1 )
+region = Rect2( 250, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 1 )
+region = Rect2( 275, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 1 )
+region = Rect2( 300, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 1 )
+region = Rect2( 325, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 1 )
+region = Rect2( 350, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 1 )
+region = Rect2( 375, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 1 )
+region = Rect2( 400, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 1 )
+region = Rect2( 425, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 1 )
+region = Rect2( 450, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 1 )
+region = Rect2( 475, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 1 )
+region = Rect2( 500, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 1 )
+region = Rect2( 525, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 1 )
+region = Rect2( 550, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 1 )
+region = Rect2( 575, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 1 )
+region = Rect2( 600, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 1 )
+region = Rect2( 625, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 1 )
+region = Rect2( 650, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 1 )
+region = Rect2( 675, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 1 )
+region = Rect2( 700, 0, 25, 22 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 1 )
+region = Rect2( 725, 0, 25, 22 )
+
+[sub_resource type="SpriteFrames" id=43]
+animations = [ {
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="ProxyTexture" id=44]
+
+[sub_resource type="ProxyTexture" id=45]
+
+[sub_resource type="CircleShape2D" id=46]
+radius = 23.9402
+
+[sub_resource type="Animation" id=47]
+resource_name = "ArrowBounceMessenger"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("spot:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 0.336437, -14.1082 ), Vector2( 0.336, -12.108 ), Vector2( 0.336437, -14.1082 ) ]
+}
+
+[node name="Messenger" type="KinematicBody2D" groups=[
+"Messenger",
+]]
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 3 )
+
+[node name="spot" type="Sprite" parent="."]
+position = Vector2( 0.336, -12.108 )
+rotation = 4.71239
+scale = Vector2( 0.395947, 0.391376 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource( 1 )
+
+[node name="MessengerArea" type="Area2D" parent="."]
+scale = Vector2( 0.599999, 1 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MessengerArea"]
+shape = SubResource( 2 )
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 43 )
+animation = "Idle"
+frame = 16
+playing = true
+
+[node name="TouchScreenButton" type="TouchScreenButton" parent="."]
+modulate = Color( 1, 1, 1, 0 )
+position = Vector2( -7.40303, -7.72863 )
+scale = Vector2( 16.2761, 16.6538 )
+normal = SubResource( 44 )
+pressed = SubResource( 45 )
+
+[node name="PlayerDetection" type="Area2D" parent="."]
+scale = Vector2( 0.68, 1 )
+collision_layer = 524288
+collision_mask = 524288
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerDetection"]
+shape = SubResource( 46 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/ArrowBounceMessenger = SubResource( 47 )
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 10.0
+one_shot = true
+
+[node name="ReturnTime" type="Timer" parent="."]
+wait_time = 180.0
+one_shot = true
+
+[node name="VisibilityNotifier2D" type="VisibilityNotifier2D" parent="."]
+position = Vector2( -107.546, 0.793701 )
+[connection signal="area_entered" from="MessengerArea" to="." method="_on_MessengerArea_area_entered" flags=3]
+[connection signal="pressed" from="TouchScreenButton" to="." method="_on_TouchScreenButton_pressed" flags=3]
+[connection signal="body_entered" from="PlayerDetection" to="." method="_on_PlayerDetection_body_entered" flags=3]
+[connection signal="body_exited" from="PlayerDetection" to="." method="_on_PlayerDetection_body_exited" flags=3]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout" flags=3]
+[connection signal="timeout" from="ReturnTime" to="." method="_on_ReturnTime_timeout" flags=3]
+[connection signal="screen_entered" from="VisibilityNotifier2D" to="." method="_on_VisibilityNotifier2D_screen_entered" flags=3]

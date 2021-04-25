@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/SariPencere.png" type="Texture" id=1]
+
+[node name="SariPencere" type="Sprite" groups=[
+"Yellow",
+]]
+z_index = 2
+texture = ExtResource( 1 )

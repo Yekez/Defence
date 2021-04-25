@@ -1,0 +1,135 @@
+[gd_scene load_steps=18 format=2]
+
+[ext_resource path="res://retro_computer_personal_use.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://Prefabs/RewardChest.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Scripts/ChestScene.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+size = 6
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=2]
+
+[sub_resource type="StyleBoxEmpty" id=3]
+
+[sub_resource type="StyleBoxEmpty" id=4]
+
+[sub_resource type="StyleBoxEmpty" id=5]
+
+[sub_resource type="StyleBoxEmpty" id=6]
+
+[sub_resource type="DynamicFont" id=7]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="StyleBoxEmpty" id=8]
+
+[sub_resource type="StyleBoxEmpty" id=9]
+
+[sub_resource type="StyleBoxEmpty" id=10]
+
+[sub_resource type="StyleBoxEmpty" id=11]
+
+[sub_resource type="StyleBoxEmpty" id=12]
+
+[sub_resource type="DynamicFont" id=13]
+size = 12
+outline_size = 1
+outline_color = Color( 0, 0, 0, 1 )
+use_mipmaps = true
+font_data = ExtResource( 1 )
+
+[sub_resource type="Animation" id=14]
+tracks/0/type = "value"
+tracks/0/path = NodePath("CanvasLayer/ColorRect:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 0, 0, 0, 0 ), Color( 0, 0, 0, 0.745098 ) ]
+}
+
+[node name="ChestScene" type="Node2D"]
+script = ExtResource( 3 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 4
+
+[node name="ColorRect" type="ColorRect" parent="CanvasLayer"]
+margin_left = -4.0
+margin_top = -3.0
+margin_right = 173.0
+margin_bottom = 94.0
+color = Color( 0, 0, 0, 0.462745 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CanvasLayer2" type="CanvasLayer" parent="."]
+layer = 5
+
+[node name="Label" type="Label" parent="CanvasLayer2"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -13.4848
+margin_bottom = -58.4848
+custom_fonts/font = SubResource( 1 )
+text = "Watch ad to get 35 gold"
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RewardChest" parent="CanvasLayer2" instance=ExtResource( 2 )]
+position = Vector2( 73.8349, 51.0181 )
+
+[node name="Watch" type="Button" parent="CanvasLayer2"]
+anchor_left = 0.5
+anchor_right = 0.96476
+anchor_bottom = 1.0
+margin_left = 16.0327
+margin_top = 24.9767
+margin_right = 0.952972
+margin_bottom = -43.0233
+custom_styles/hover = SubResource( 2 )
+custom_styles/pressed = SubResource( 3 )
+custom_styles/focus = SubResource( 4 )
+custom_styles/disabled = SubResource( 5 )
+custom_styles/normal = SubResource( 6 )
+custom_fonts/font = SubResource( 7 )
+text = "Watch"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Skip" type="Button" parent="CanvasLayer2"]
+anchor_right = 0.5
+anchor_bottom = 1.0
+margin_left = 5.61532
+margin_top = 24.9767
+margin_right = -25.3847
+margin_bottom = -43.0233
+custom_styles/hover = SubResource( 8 )
+custom_styles/pressed = SubResource( 9 )
+custom_styles/focus = SubResource( 10 )
+custom_styles/disabled = SubResource( 11 )
+custom_styles/normal = SubResource( 12 )
+custom_fonts/font = SubResource( 13 )
+text = "Skip"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/chestscene = SubResource( 14 )
+[connection signal="pressed" from="CanvasLayer2/Watch" to="." method="_on_Watch_pressed" flags=3]
+[connection signal="pressed" from="CanvasLayer2/Skip" to="." method="_on_Skip_pressed" flags=3]

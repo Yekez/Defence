@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/barracks_upg.ogg-9cc3fea10d09526b67b848a48b2d5755.oggstr"
+
+[deps]
+
+source_file="res://SFX/barracks_upg.ogg"
+dest_files=[ "res://.import/barracks_upg.ogg-9cc3fea10d09526b67b848a48b2d5755.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

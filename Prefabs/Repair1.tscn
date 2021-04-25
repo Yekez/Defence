@@ -1,0 +1,133 @@
+[gd_scene load_steps=27 format=2]
+
+[ext_resource path="res://Sprites/MechanicIdle.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/MechanicRun.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/MechanicFix.png" type="Texture" id=3]
+[ext_resource path="res://Scripts/Repair1.gd" type="Script" id=4]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.70212, 5.20794 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 11, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 22, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 33, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 44, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 55, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 11, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 22, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 1 )
+region = Rect2( 33, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 1 )
+region = Rect2( 44, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 1 )
+region = Rect2( 55, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 1 )
+region = Rect2( 66, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 3 )
+region = Rect2( 0, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 3 )
+region = Rect2( 11, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 3 )
+region = Rect2( 22, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 3 )
+region = Rect2( 33, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 3 )
+region = Rect2( 44, 0, 11, 15 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 3 )
+region = Rect2( 55, 0, 11, 15 )
+
+[sub_resource type="SpriteFrames" id=21]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 10.0
+}, {
+"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Repair",
+"speed": 10.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=22]
+extents = Vector2( 5.39091, 6.22802 )
+
+[node name="Repair1" type="KinematicBody2D"]
+z_index = 5
+collision_layer = 0
+collision_mask = 0
+script = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 0.292389, 0.87717 )
+shape = SubResource( 1 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 21 )
+animation = "Repair"
+frame = 2
+
+[node name="RepairArea" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 131075
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RepairArea"]
+position = Vector2( 1.00028, -0.153889 )
+shape = SubResource( 22 )
+
+[node name="Timer" type="Timer" parent="."]
+[connection signal="area_entered" from="RepairArea" to="." method="_on_RepairArea_area_entered" flags=3]
+[connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout" flags=3]

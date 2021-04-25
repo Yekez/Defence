@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/difficulty_increase.wav-590f0a25fb668050f0bb1f6a86a06645.sample"
+
+[deps]
+
+source_file="res://SFX/difficulty_increase.wav"
+dest_files=[ "res://.import/difficulty_increase.wav-590f0a25fb668050f0bb1f6a86a06645.sample" ]
+
+[params]
+
+force/8_bit=true
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/RedArmySound.ogg-ea0055e65884df8752ecac3c0882e2aa.oggstr"
+
+[deps]
+
+source_file="res://SFX/RedArmySound.ogg"
+dest_files=[ "res://.import/RedArmySound.ogg-ea0055e65884df8752ecac3c0882e2aa.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

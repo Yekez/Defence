@@ -1,0 +1,243 @@
+[gd_scene load_steps=45 format=2]
+
+[ext_resource path="res://Sprites/playerAttack.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/Player.gd" type="Script" id=2]
+[ext_resource path="res://SFX/fire_bow_soundg.wav" type="AudioStream" id=3]
+[ext_resource path="res://Sprites/playerIdle.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/PlayerWalk.png" type="Texture" id=5]
+[ext_resource path="res://Prefabs/MainCamArcher.tscn" type="PackedScene" id=6]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSag.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSol.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSagClicked.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/HareketButonuSolClicked.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/AttackButton1.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/HareketVeUltimateIcon/AttackButton2.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/MusicOn.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/MusicOff.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/coin.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Lv2Army/+5gold.png" type="Texture" id=16]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 4.42296, 5.52369 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 1 )
+region = Rect2( 12, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 1 )
+region = Rect2( 24, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 1 )
+region = Rect2( 36, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 1 )
+region = Rect2( 48, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 1 )
+region = Rect2( 60, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 1 )
+region = Rect2( 72, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 1 )
+region = Rect2( 84, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 1 )
+region = Rect2( 96, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 1 )
+region = Rect2( 0, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 5 )
+region = Rect2( 0, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 5 )
+region = Rect2( 12, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 5 )
+region = Rect2( 24, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 5 )
+region = Rect2( 36, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 5 )
+region = Rect2( 48, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 5 )
+region = Rect2( 60, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 4 )
+region = Rect2( 0, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 4 )
+region = Rect2( 12, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 4 )
+region = Rect2( 24, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 4 )
+region = Rect2( 36, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 4 )
+region = Rect2( 48, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 4 )
+region = Rect2( 60, 0, 12, 17 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 4 )
+region = Rect2( 72, 0, 12, 17 )
+
+[sub_resource type="SpriteFrames" id=24]
+animations = [ {
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 9 ), SubResource( 8 ), SubResource( 9 ), SubResource( 8 ), SubResource( 9 ), SubResource( 9 ), SubResource( 10 ), SubResource( 10 ), SubResource( 10 ), SubResource( 5 ), SubResource( 5 ), SubResource( 4 ) ],
+"loop": false,
+"name": "Attack",
+"speed": 15.0
+}, {
+"frames": [ SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 8.0
+}, {
+"frames": [ SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ), SubResource( 21 ), SubResource( 22 ), SubResource( 23 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+} ]
+
+[sub_resource type="Gradient" id=25]
+offsets = PoolRealArray( 0, 0.00571429 )
+
+[sub_resource type="GradientTexture" id=26]
+gradient = SubResource( 25 )
+
+[sub_resource type="Gradient" id=27]
+offsets = PoolRealArray( 0.954286, 1 )
+colors = PoolColorArray( 0.734375, 0.0401611, 0.0401611, 1, 1, 1, 1, 1 )
+
+[sub_resource type="GradientTexture" id=28]
+gradient = SubResource( 27 )
+
+[node name="Player" type="KinematicBody2D" groups=[
+"Player",
+"PlayerArcher",
+]]
+z_index = 10
+z_as_relative = false
+collision_layer = 524289
+collision_mask = 524289
+script = ExtResource( 2 )
+
+[node name="plus5tween" type="Tween" parent="."]
+
+[node name="plus5" type="Sprite" parent="."]
+modulate = Color( 0.717647, 0.721569, 0.0745098, 0 )
+position = Vector2( -3.45991, -6.54 )
+texture = ExtResource( 16 )
+
+[node name="coin" type="Sprite" parent="plus5"]
+position = Vector2( 6.774, 0 )
+scale = Vector2( 0.24, 0.28 )
+texture = ExtResource( 15 )
+region_enabled = true
+region_rect = Rect2( 183, 2, 12, 14 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -0.774002, 1.48846 )
+shape = SubResource( 1 )
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 3 )
+volume_db = -12.867
+pitch_scale = 1.37
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 24 )
+animation = "Idle"
+
+[node name="Tween" type="Tween" parent="."]
+
+[node name="Tween2" type="Tween" parent="."]
+
+[node name="CamNode" type="Node2D" parent="."]
+
+[node name="Camera2D2" parent="CamNode" instance=ExtResource( 6 )]
+position = Vector2( 50, -14 )
+
+[node name="TouchButtons" type="Node2D" parent="CamNode"]
+scale = Vector2( 0.3, 0.3 )
+
+[node name="Left" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( -77.7174, 44.8804 )
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 10 )
+action = "left"
+visibility_mode = 1
+
+[node name="Right" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( -11.9441, 44.7391 )
+scale = Vector2( 1.2, 1.2 )
+normal = ExtResource( 7 )
+pressed = ExtResource( 9 )
+action = "right"
+visibility_mode = 1
+
+[node name="Attack" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( 320, 31.5246 )
+scale = Vector2( 1.65041, 1.54169 )
+normal = ExtResource( 11 )
+pressed = ExtResource( 12 )
+action = "shoot"
+
+[node name="Mute" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+position = Vector2( 320, -178.34 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 14 )
+
+[node name="Unmute" type="TouchScreenButton" parent="CamNode/TouchButtons"]
+visible = false
+position = Vector2( 327.079, -178.34 )
+scale = Vector2( 2, 2 )
+normal = ExtResource( 13 )
+
+[node name="ProgressBar" type="TextureProgress" parent="CamNode"]
+margin_left = 90.543
+margin_top = 26.7884
+margin_right = 2151.54
+margin_bottom = 32.7884
+rect_rotation = -89.9999
+rect_scale = Vector2( 0.008, 0.404 )
+max_value = 130.0
+step = 3.0
+value = 129.0
+texture_under = SubResource( 26 )
+texture_progress = SubResource( 28 )
+nine_patch_stretch = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="animation_finished" from="AnimatedSprite" to="." method="_on_AnimatedSprite_animation_finished" flags=3]
+[connection signal="pressed" from="CamNode/TouchButtons/Mute" to="." method="_on_Mute_pressed" flags=3]
+[connection signal="pressed" from="CamNode/TouchButtons/Unmute" to="." method="_on_Unmute_pressed" flags=3]

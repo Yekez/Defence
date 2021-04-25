@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Scripts/MessengerScripts/SendHelp.gd" type="Script" id=1]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/HelpButtonClicked.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/HelpButton.png" type="Texture" id=3]
+[ext_resource path="res://retro_computer_personal_use.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://SFX/Negative_Sound.wav" type="AudioStream" id=5]
+
+[sub_resource type="DynamicFont" id=1]
+size = 27
+font_data = ExtResource( 4 )
+
+[node name="SendHelp" type="TouchScreenButton"]
+position = Vector2( -14.3356, 16.2587 )
+z_index = 4
+normal = ExtResource( 3 )
+pressed = ExtResource( 2 )
+script = ExtResource( 1 )
+
+[node name="GoldText" type="Label" parent="."]
+margin_left = 16.745
+margin_top = 0.78406
+margin_right = 64.745
+margin_bottom = 46.7841
+rect_scale = Vector2( 0.124916, 0.164295 )
+custom_fonts/font = SubResource( 1 )
+custom_colors/font_color = Color( 1, 1, 0, 1 )
+align = 1
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NegativeSound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 5 )
+volume_db = -12.0
+[connection signal="pressed" from="." to="." method="_on_SendHelp_pressed" flags=3]

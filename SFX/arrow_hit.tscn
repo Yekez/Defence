@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://SFX/fire_bow_soundg.wav" type="AudioStream" id=1]
+[ext_resource path="res://Scripts/arrow_hit.gd" type="Script" id=2]
+
+
+[node name="arrow_hit" type="AudioStreamPlayer2D"]
+stream = ExtResource( 1 )
+volume_db = -18.227
+pitch_scale = 4.0
+autoplay = true
+script = ExtResource( 2 )
+[connection signal="finished" from="." to="." method="_on_arrow_hit_finished" flags=3]

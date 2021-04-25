@@ -1,0 +1,266 @@
+[gd_scene load_steps=46 format=2]
+
+[ext_resource path="res://Sprites/Interface1/Repairman1Button.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/Interface1/Repairman1ButtonClicked.png" type="Texture" id=2]
+[ext_resource path="res://Sprites/ArmyLv3/KnightLv3ButtonClicked.png" type="Texture" id=3]
+[ext_resource path="res://Sprites/Interface1/Knight1Button.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/Interface1/Knight1ButtonClicked.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/Interface1/Repairman2ButtonLocked.png" type="Texture" id=6]
+[ext_resource path="res://Sprites/ArmyLv3/PencereSon.png" type="Texture" id=7]
+[ext_resource path="res://Sprites/ArmyLv3/KnightLv2ButtonUnlocked.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/ArmyLv3/KnightLv3ButtonUnlocked.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Interface1/50Text.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Interface1/Archer1ButtonClicked.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Interface1/UpgradeOkYesil.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Interface1/20Text.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Interface1/UpgradeOkTuruncuClicked.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Interface1/UpgradeOkTuruncu.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Interface1/Archer1Button.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Interface1/UpgradeOkYesilClicked.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Interface1/UpgradeOkMavi.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Interface1/10Text.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Interface1/UpgradeOkMaviClicked.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Interface1/Archer2ButtonLocked.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Interface1/1speedText.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Interface1/DMG2text.png" type="Texture" id=23]
+[ext_resource path="res://Sprites/Interface1/05speedText.png" type="Texture" id=24]
+[ext_resource path="res://Sprites/Interface1/Knight2ButtonLocked.png" type="Texture" id=25]
+[ext_resource path="res://Scripts/UnitTentUI.gd" type="Script" id=26]
+[ext_resource path="res://SFX/unit1_spawn_sound.wav" type="AudioStream" id=27]
+[ext_resource path="res://SFX/Negative_Sound.wav" type="AudioStream" id=28]
+[ext_resource path="res://Sprites/LumberMillInterface/100Text.png" type="Texture" id=29]
+[ext_resource path="res://Sprites/Interface1/Archer2ButtonClicked.png" type="Texture" id=30]
+[ext_resource path="res://Sprites/Interface1/Archer2Button.png" type="Texture" id=31]
+[ext_resource path="res://Sprites/ArmyLv3/KnightLv2ButtonClicked.png" type="Texture" id=32]
+[ext_resource path="res://Sprites/ArmyLv3/RepairmanLv3ButtonUnlocked.png" type="Texture" id=33]
+[ext_resource path="res://Sprites/ArmyLv3/ArcherLv3ButtonUnlocked.png" type="Texture" id=34]
+[ext_resource path="res://Sprites/ArmyLv3/RepairmanLv3ButtonClicked.png" type="Texture" id=35]
+[ext_resource path="res://Sprites/ArmyLv3/RepairmanLv3ButtonLocked.png" type="Texture" id=36]
+[ext_resource path="res://Sprites/ArmyLv3/KnightLv3ButtonLocked.png" type="Texture" id=37]
+[ext_resource path="res://Sprites/ArmyLv3/ArcherLv3ButtonClicked.png" type="Texture" id=38]
+[ext_resource path="res://Sprites/ArmyLv3/ArcherLv3ButtonLocked.png" type="Texture" id=39]
+[ext_resource path="res://Sprites/40.png" type="Texture" id=40]
+[ext_resource path="res://Sprites/Interface1/Repairman2Button.png" type="Texture" id=41]
+[ext_resource path="res://Sprites/Interface1/Repairman2ButtonClicked.png" type="Texture" id=42]
+[ext_resource path="res://Sprites/75.png" type="Texture" id=43]
+[ext_resource path="res://Sprites/refundButtonClicked.png" type="Texture" id=44]
+[ext_resource path="res://Sprites/refundButton.png" type="Texture" id=45]
+
+[node name="UnitTentUI" type="Control"]
+anchor_right = 0.45
+anchor_bottom = 0.365
+margin_right = 47.0
+margin_bottom = 22.15
+rect_scale = Vector2( 0.6, 0.6 )
+script = ExtResource( 26 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Canvas" type="Sprite" parent="."]
+light_mask = 524288
+position = Vector2( 60.2449, 28.9536 )
+z_index = 100
+texture = ExtResource( 7 )
+
+[node name="Refund" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( -15.7449, 22.216 )
+z_index = 2
+normal = ExtResource( 45 )
+pressed = ExtResource( 44 )
+
+[node name="Knight1" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( -46.9116, -21.9536 )
+normal = ExtResource( 4 )
+pressed = ExtResource( 5 )
+
+[node name="10Text" type="Sprite" parent="Canvas/Knight1"]
+position = Vector2( 4.08913, 9.85834 )
+texture = ExtResource( 19 )
+
+[node name="Archer1" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( -14.6502, -21.9536 )
+normal = ExtResource( 16 )
+pressed = ExtResource( 11 )
+
+[node name="50Text" type="Sprite" parent="Canvas/Archer1"]
+position = Vector2( 4.09475, 9.97445 )
+texture = ExtResource( 10 )
+
+[node name="Repair1" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( 17.7551, -21.9536 )
+normal = ExtResource( 1 )
+pressed = ExtResource( 2 )
+action = "Repair"
+
+[node name="20Text" type="Sprite" parent="Canvas/Repair1"]
+position = Vector2( 4.08995, 9.97179 )
+texture = ExtResource( 13 )
+
+[node name="KnightUpgrade" type="TouchScreenButton" parent="Canvas"]
+visible = false
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( -43.245, -19.9536 )
+normal = ExtResource( 18 )
+pressed = ExtResource( 20 )
+
+[node name="50Text" type="Sprite" parent="Canvas/KnightUpgrade"]
+position = Vector2( -1, 0 )
+texture = ExtResource( 29 )
+
+[node name="DMG2text" type="Sprite" parent="Canvas/KnightUpgrade"]
+position = Vector2( 19, 3.72114 )
+texture = ExtResource( 23 )
+
+[node name="ArcherUpgrade" type="TouchScreenButton" parent="Canvas"]
+visible = false
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( -10.2449, -19.9536 )
+normal = ExtResource( 12 )
+pressed = ExtResource( 17 )
+
+[node name="50Text" type="Sprite" parent="Canvas/ArcherUpgrade"]
+position = Vector2( -1, 0 )
+texture = ExtResource( 29 )
+
+[node name="05speedText" type="Sprite" parent="Canvas/ArcherUpgrade"]
+position = Vector2( 20, 3.72114 )
+texture = ExtResource( 24 )
+
+[node name="RepairUpgrade" type="TouchScreenButton" parent="Canvas"]
+visible = false
+modulate = Color( 0, 0, 0, 0.501961 )
+position = Vector2( 22.7551, -19.9536 )
+normal = ExtResource( 15 )
+pressed = ExtResource( 14 )
+
+[node name="50Text" type="Sprite" parent="Canvas/RepairUpgrade"]
+position = Vector2( -1, 0 )
+texture = ExtResource( 29 )
+
+[node name="1speedText" type="Sprite" parent="Canvas/RepairUpgrade"]
+position = Vector2( 20, 3.72114 )
+texture = ExtResource( 22 )
+
+[node name="Knight2_locked" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( -46.9116, -6.9536 )
+normal = ExtResource( 25 )
+
+[node name="Knight2" type="TouchScreenButton" parent="Canvas"]
+visible = false
+position = Vector2( -46.9116, -6.9536 )
+normal = ExtResource( 8 )
+pressed = ExtResource( 32 )
+
+[node name="40Text" type="Sprite" parent="Canvas/Knight2"]
+position = Vector2( 4.23432, 9.93119 )
+scale = Vector2( 0.800001, 1 )
+texture = ExtResource( 40 )
+
+[node name="Archer2" type="TouchScreenButton" parent="Canvas"]
+visible = false
+position = Vector2( -14.6502, -6.9536 )
+normal = ExtResource( 31 )
+pressed = ExtResource( 30 )
+
+[node name="75Text" type="Sprite" parent="Canvas/Archer2"]
+position = Vector2( 4.29456, 9.68645 )
+scale = Vector2( 1.10305, 1.13985 )
+texture = ExtResource( 43 )
+
+[node name="Archer2_locked" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( -14.6502, -6.9536 )
+normal = ExtResource( 21 )
+
+[node name="Repair2" type="TouchScreenButton" parent="Canvas"]
+visible = false
+position = Vector2( 17.7551, -6.9536 )
+normal = ExtResource( 41 )
+pressed = ExtResource( 42 )
+
+[node name="40" type="Sprite" parent="Canvas/Repair2"]
+position = Vector2( 4.72675, 9.99306 )
+scale = Vector2( 0.933333, 1 )
+texture = ExtResource( 40 )
+
+[node name="Repair2_locked" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( 17.7551, -6.9536 )
+normal = ExtResource( 6 )
+
+[node name="Knight3" type="TouchScreenButton" parent="Canvas"]
+visible = false
+position = Vector2( -46.9116, 7.9384 )
+normal = ExtResource( 9 )
+pressed = ExtResource( 3 )
+
+[node name="100Text" type="Sprite" parent="Canvas/Knight3"]
+position = Vector2( 4.37439, 9.99314 )
+scale = Vector2( 0.666667, 1 )
+texture = ExtResource( 29 )
+
+[node name="Archer3" type="TouchScreenButton" parent="Canvas"]
+visible = false
+position = Vector2( -14.6502, 7.9384 )
+normal = ExtResource( 34 )
+pressed = ExtResource( 38 )
+
+[node name="100Text" type="Sprite" parent="Canvas/Archer3"]
+position = Vector2( 4.68639, 9.98061 )
+scale = Vector2( 0.733333, 1 )
+texture = ExtResource( 29 )
+
+[node name="Repair3" type="TouchScreenButton" parent="Canvas"]
+visible = false
+position = Vector2( 17.7551, 7.9384 )
+normal = ExtResource( 33 )
+pressed = ExtResource( 35 )
+
+[node name="75" type="Sprite" parent="Canvas/Repair3"]
+position = Vector2( 4.03679, 9.91941 )
+texture = ExtResource( 43 )
+
+[node name="Knight3_locked" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( -46.9116, 7.9384 )
+normal = ExtResource( 37 )
+
+[node name="Archer3_locked" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( -14.6502, 7.9384 )
+normal = ExtResource( 39 )
+
+[node name="Repair3_locked" type="TouchScreenButton" parent="Canvas"]
+position = Vector2( 17.7551, 7.9384 )
+normal = ExtResource( 36 )
+
+[node name="unit1_spawn_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 27 )
+volume_db = -6.753
+
+[node name="unit_upg_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 27 )
+volume_db = -8.104
+pitch_scale = 2.0
+
+[node name="negative_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 28 )
+volume_db = -6.753
+
+[node name="refund" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 28 )
+volume_db = -6.753
+pitch_scale = 4.0
+
+[node name="repair_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 27 )
+pitch_scale = 3.05
+[connection signal="pressed" from="Canvas/Refund" to="." method="_on_Refund_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Knight1" to="." method="_on_Knight1_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Archer1" to="." method="_on_Archer1_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Repair1" to="." method="_on_Repair1_pressed" flags=3]
+[connection signal="pressed" from="Canvas/KnightUpgrade" to="." method="_on_KnightUpgrade_pressed" flags=3]
+[connection signal="pressed" from="Canvas/ArcherUpgrade" to="." method="_on_ArcherUpgrade_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Knight2" to="." method="_on_Knight2_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Archer2" to="." method="_on_Archer2_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Repair2" to="." method="_on_Repair2_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Knight3" to="." method="_on_Knight3_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Archer3" to="." method="_on_Archer3_pressed" flags=3]
+[connection signal="pressed" from="Canvas/Repair3" to="." method="_on_Repair3_pressed" flags=3]

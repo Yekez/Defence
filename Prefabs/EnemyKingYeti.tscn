@@ -1,0 +1,441 @@
+[gd_scene load_steps=49 format=2]
+
+[ext_resource path="res://SFX/Attack.wav" type="AudioStream" id=1]
+[ext_resource path="res://Sprites/SONpng/yetiKingAllAnim.png" type="Texture" id=2]
+
+[sub_resource type="GDScript" id=1]
+script/source = "extends KinematicBody2D
+
+
+var hit = preload(\"res://Prefabs/enemy_hit.tscn\")
+
+signal hit
+
+var speed = Vector2(-10,0)
+var hitting = 0
+var enemyGold = 50
+var enemyHP = 160
+var hitting_melee = false
+var attack1_on = false
+var alive = true
+export var end_the_game = false # end animasyonuna geç
+var queuefreetime = false
+var stopareas = false
+func _ready():
+	GameManager.yetiking = self
+	GameManager.canvas.get_node(\"AnimationPlayer\").play(\"fade\")
+	GameManager.sun.get_node(\"AnimationPlayer\").play(\"fade\")
+	GameManager.Player.get_node(\"CamNode/TouchButtons/Mute\").queue_free()
+	GameManager.Player.get_node(\"CamNode/TouchButtons/Unmute\").queue_free()
+	GameManager.kinghp.max_value = enemyHP
+	GameManager.kinghp.value = enemyHP
+	GameManager.kinghp.set_hp(enemyHP)
+	
+func _process(_delta):
+	if !stopareas:
+		if $AttackingMeleeArea.get_overlapping_areas().size()==0:
+			hitting = 0
+			hitting_melee = false
+		if $AttackingArea.get_overlapping_areas().size()>0:
+			hitting = 1
+			hitting_melee =true
+
+
+
+func _physics_process(_delta):
+	if alive:
+		_yeti_walk()
+		move_and_slide(speed)
+		if hitting==1 || hitting_melee:
+			if hitting == 1:
+				GameManager.castlehp -= 3
+				GameManager.hitting = true
+			if attack1_on:
+				$AnimatedSprite.play(\"Attack1\")
+				if $AnimatedSprite.animation==\"Attack1\":
+					if $AnimatedSprite.frame==9:
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						$AnimatedSprite.frame=10
+						$attack_sound.play()
+					elif $AnimatedSprite.frame == 15:
+						attack1_on = false
+			if !attack1_on:
+				$AnimatedSprite.play(\"Attack2\")
+				if $AnimatedSprite.animation==\"Attack2\":
+					if $AnimatedSprite.frame==4:
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						_deal_damage()
+						$AnimatedSprite.frame=5
+						$attack_sound.play()
+					elif $AnimatedSprite.frame == 10:
+						attack1_on = true
+		else:
+			$AnimatedSprite.play(\"Walk\")
+		if enemyHP <= 0:
+			GameManager.coins += enemyGold
+			GameManager.hitting = false
+			alive = false
+	else:
+		if !end_the_game:
+			stopareas = true
+			$AnimationPlayer.play(\"dying\")
+			GameManager.Main.get_node(\"FinalMusic\").stop()
+			$AnimatedSprite.stop()
+			if !queuefreetime:
+				$DetectionArea.queue_free()
+				$DefendingArea.queue_free()
+				$AttackingArea.queue_free()
+				$AttackingMeleeArea.queue_free()
+				$CollisionShape2D2.queue_free()
+				#KESIN BUG CIKAR
+				queuefreetime = true
+		else:
+			if is_instance_valid(GameManager.Main):
+				GameManager.Main.get_node(\"EndAnimation\").play(\"end\")
+				#olaylar
+				pass
+
+func _yeti_walk():
+	if  $AnimatedSprite.frame==3:
+		speed = Vector2(0,0)
+	elif  $AnimatedSprite.frame==4:
+		speed = Vector2(0,0)
+	elif  $AnimatedSprite.frame==5:
+		speed = Vector2(0,0)
+	elif  $AnimatedSprite.frame==6:
+		speed = Vector2(0,0)
+	elif  $AnimatedSprite.frame==10:
+		speed = Vector2(0,0)
+	elif  $AnimatedSprite.frame==11:
+		speed = Vector2(0,0)
+	elif  $AnimatedSprite.frame==12:
+		speed = Vector2(0,0)
+	elif  $AnimatedSprite.frame==13:
+		speed = Vector2(0,0)
+	else:
+		speed = Vector2(-10,0)
+
+
+# warning-ignore:unused_argument
+func _on_Area2D_area_entered(_area):
+	emit_signal(\"hit\")
+	
+
+
+func _on_Enemy1_hit():
+	hitting = 1
+
+func _take_dmg_from_unit1():
+	enemyHP-=GameManager.unit1_dmg
+	GameManager.kinghp.set_hp(enemyHP)
+func _take_dmg_from_unit2():
+	enemyHP-=GameManager.unit2_dmg
+	GameManager.kinghp.set_hp(enemyHP)
+func _take_dmg_from_player():
+	enemyHP -= GameManager.player_dmg
+	GameManager.kinghp.set_hp(enemyHP)
+	print(\"took dmg\")
+
+
+func _on_AttackingMeleeArea_area_entered(_area):
+	hitting_melee = true
+	
+func _deal_damage():
+	var h = hit.instance()
+	add_child(h)
+	h.position = Vector2(-6,14)
+	h.scale = Vector2(2,3)
+"
+
+[sub_resource type="CircleShape2D" id=2]
+radius = 6.58648
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 7.50673, 11.3027 )
+
+[sub_resource type="RectangleShape2D" id=4]
+extents = Vector2( 9.1957, 10.1436 )
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 6.8113, 8.14091 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 65, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 130, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=9]
+atlas = ExtResource( 2 )
+region = Rect2( 195, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=10]
+atlas = ExtResource( 2 )
+region = Rect2( 260, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=11]
+atlas = ExtResource( 2 )
+region = Rect2( 325, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=12]
+atlas = ExtResource( 2 )
+region = Rect2( 390, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=13]
+atlas = ExtResource( 2 )
+region = Rect2( 455, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=14]
+atlas = ExtResource( 2 )
+region = Rect2( 520, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=15]
+atlas = ExtResource( 2 )
+region = Rect2( 585, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=16]
+atlas = ExtResource( 2 )
+region = Rect2( 650, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=17]
+atlas = ExtResource( 2 )
+region = Rect2( 715, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=18]
+atlas = ExtResource( 2 )
+region = Rect2( 780, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=19]
+atlas = ExtResource( 2 )
+region = Rect2( 845, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=20]
+atlas = ExtResource( 2 )
+region = Rect2( 910, 0, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=21]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=22]
+atlas = ExtResource( 2 )
+region = Rect2( 65, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=23]
+atlas = ExtResource( 2 )
+region = Rect2( 130, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=24]
+atlas = ExtResource( 2 )
+region = Rect2( 195, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=25]
+atlas = ExtResource( 2 )
+region = Rect2( 260, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=26]
+atlas = ExtResource( 2 )
+region = Rect2( 325, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=27]
+atlas = ExtResource( 2 )
+region = Rect2( 390, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=28]
+atlas = ExtResource( 2 )
+region = Rect2( 455, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=29]
+atlas = ExtResource( 2 )
+region = Rect2( 520, 80, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=30]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=31]
+atlas = ExtResource( 2 )
+region = Rect2( 65, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=32]
+atlas = ExtResource( 2 )
+region = Rect2( 130, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=33]
+atlas = ExtResource( 2 )
+region = Rect2( 195, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=34]
+atlas = ExtResource( 2 )
+region = Rect2( 260, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=35]
+atlas = ExtResource( 2 )
+region = Rect2( 325, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=36]
+atlas = ExtResource( 2 )
+region = Rect2( 390, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=37]
+atlas = ExtResource( 2 )
+region = Rect2( 455, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=38]
+atlas = ExtResource( 2 )
+region = Rect2( 520, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=39]
+atlas = ExtResource( 2 )
+region = Rect2( 585, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=40]
+atlas = ExtResource( 2 )
+region = Rect2( 650, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=41]
+atlas = ExtResource( 2 )
+region = Rect2( 715, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=42]
+atlas = ExtResource( 2 )
+region = Rect2( 780, 40, 65, 40 )
+
+[sub_resource type="AtlasTexture" id=43]
+atlas = ExtResource( 2 )
+region = Rect2( 845, 40, 65, 40 )
+
+[sub_resource type="SpriteFrames" id=44]
+animations = [ {
+"frames": [ SubResource( 6 ), SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ), SubResource( 12 ), SubResource( 13 ), SubResource( 14 ), SubResource( 15 ), SubResource( 16 ), SubResource( 17 ), SubResource( 18 ), SubResource( 19 ), SubResource( 20 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 21 ), SubResource( 22 ), SubResource( 23 ), SubResource( 24 ), SubResource( 25 ), SubResource( 25 ), SubResource( 26 ), SubResource( 27 ), SubResource( 28 ), SubResource( 29 ), SubResource( 29 ) ],
+"loop": true,
+"name": "Attack2",
+"speed": 5.0
+}, {
+"frames": [ SubResource( 30 ), SubResource( 31 ), SubResource( 32 ), SubResource( 33 ), SubResource( 34 ), SubResource( 35 ), SubResource( 36 ), SubResource( 37 ), SubResource( 38 ), SubResource( 39 ), SubResource( 39 ), SubResource( 40 ), SubResource( 41 ), SubResource( 42 ), SubResource( 43 ), SubResource( 43 ) ],
+"loop": true,
+"name": "Attack1",
+"speed": 6.0
+} ]
+
+[sub_resource type="RectangleShape2D" id=45]
+extents = Vector2( 8.70589, 9.82041 )
+
+[sub_resource type="Animation" id=46]
+resource_name = "dying"
+length = 8.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("AnimatedSprite:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1, 1.5, 2, 2.5, 2.8, 3, 3.2, 3.4, 3.6, 3.8, 3.9, 4, 4.1, 4.2, 4.3, 4.4, 4.5, 4.6, 4.7, 4.8, 4.9, 5, 6, 6.6, 8 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0.0156863, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0.0156863, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 0, 0.0392157, 1, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 1, 1, 1, 1 ), Color( 1, 0, 0, 1 ), Color( 0, 0, 0, 1 ), Color( 0.137255, 0, 0, 0 ), Color( 0.137255, 0, 0, 0 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:end_the_game")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 8 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 1,
+"values": [ false, true ]
+}
+
+[node name="KingYeti" type="KinematicBody2D" groups=[
+"Enemy",
+]]
+z_index = 10
+collision_layer = 2112
+collision_mask = 2049
+script = SubResource( 1 )
+
+[node name="DetectionArea" type="Area2D" parent="."]
+visible = false
+position = Vector2( 10.5518, 6.77208 )
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DetectionArea"]
+scale = Vector2( 4, 3.95603 )
+shape = SubResource( 2 )
+
+[node name="DefendingArea" type="Area2D" parent="."]
+position = Vector2( 12.7934, 8.28224 )
+scale = Vector2( 1.398, 0.994 )
+collision_layer = 4
+collision_mask = 512
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DefendingArea"]
+position = Vector2( -0.427185, 0.142397 )
+shape = SubResource( 3 )
+
+[node name="AttackingArea" type="Area2D" parent="."]
+visible = false
+position = Vector2( 6.74901, 9.98889 )
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackingArea"]
+shape = SubResource( 4 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 8.76761, 10.642 )
+scale = Vector2( 1, 1.16 )
+shape = SubResource( 5 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="."]
+frames = SubResource( 44 )
+animation = "Attack2"
+frame = 3
+
+[node name="attack_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource( 1 )
+volume_db = -9.649
+pitch_scale = 0.3
+
+[node name="AttackingMeleeArea" type="Area2D" parent="."]
+visible = false
+position = Vector2( 5.87211, 10.317 )
+scale = Vector2( 0.879999, 1 )
+monitorable = false
+collision_layer = 0
+collision_mask = 32768
+
+[node name="CollisionPolygon2D" type="CollisionShape2D" parent="AttackingMeleeArea"]
+shape = SubResource( 45 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+anims/dying = SubResource( 46 )
+[connection signal="hit" from="." to="." method="_on_Enemy1_hit"]
+[connection signal="area_entered" from="AttackingArea" to="." method="_on_Area2D_area_entered"]
+[connection signal="area_entered" from="AttackingMeleeArea" to="." method="_on_AttackingMeleeArea_area_entered" flags=3]

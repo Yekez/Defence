@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Sprites/Messenger/MessengerInterface/CallSupportTextOn.png" type="Texture" id=1]
+[ext_resource path="res://Scripts/CallSupport.gd" type="Script" id=2]
+
+[node name="CallSupport" type="TouchScreenButton"]
+normal = ExtResource( 1 )
+pressed = ExtResource( 1 )
+script = ExtResource( 2 )
+[connection signal="pressed" from="." to="." method="_on_CallSupport_pressed" flags=3]

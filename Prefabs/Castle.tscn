@@ -1,0 +1,267 @@
+[gd_scene load_steps=33 format=2]
+
+[ext_resource path="res://Sprites/Map/ArmyLv2.png" type="Texture" id=1]
+[ext_resource path="res://Sprites/gokyuzu.png" type="Texture" id=2]
+[ext_resource path="res://Animaitons/bulut_animation.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Sprites/upgrade1.png" type="Texture" id=4]
+[ext_resource path="res://Sprites/upgrade2.png" type="Texture" id=5]
+[ext_resource path="res://Sprites/upgrade3.png" type="Texture" id=6]
+[ext_resource path="res://Scripts/Castle.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/Map/GateLv2.png" type="Texture" id=8]
+[ext_resource path="res://Sprites/Map/ZeminVeSis.png" type="Texture" id=9]
+[ext_resource path="res://Sprites/Map/ArmyLv3.png" type="Texture" id=10]
+[ext_resource path="res://Sprites/Map/Agaclar.png" type="Texture" id=11]
+[ext_resource path="res://Sprites/Map/ArmyLv1.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/SONpng/koyukisim.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/SONpng/acikkisim.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Map/LumberMillLv2.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Map/LumberMillLv3.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Map/DuvarLv3.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Map/DuvarLv2.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Map/TowerLvTasLv1.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Map/LumberMillLv1.png" type="Texture" id=20]
+[ext_resource path="res://Sprites/Map/GateLv1.png" type="Texture" id=21]
+[ext_resource path="res://Sprites/Map/TowerLv1.png" type="Texture" id=22]
+[ext_resource path="res://Sprites/Map/GateLv3.png" type="Texture" id=23]
+[ext_resource path="res://Prefabs/Parallax sun.tscn" type="PackedScene" id=24]
+[ext_resource path="res://Sprites/SONpng/StoneTowerLvL6.png" type="Texture" id=25]
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 0.712608, 0.167239 )
+
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 21.7635
+height = 786.821
+
+[sub_resource type="RectangleShape2D" id=3]
+extents = Vector2( 4.74181, 14.1655 )
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 3.41628
+height = 35.3276
+
+[sub_resource type="RectangleShape2D" id=5]
+extents = Vector2( 1.44445, 10.0562 )
+
+[sub_resource type="RectangleShape2D" id=6]
+
+[sub_resource type="RectangleShape2D" id=7]
+extents = Vector2( 80.5683, 10 )
+
+[node name="Castle" type="StaticBody2D"]
+z_index = -2
+collision_layer = 132097
+collision_mask = 132097
+script = ExtResource( 7 )
+
+[node name="sky" type="Sprite" parent="."]
+position = Vector2( -50, -3 )
+scale = Vector2( 2, 1 )
+texture = ExtResource( 2 )
+
+[node name="bulut_animation" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0, 0 )
+
+[node name="ParallaxBackground" parent="." instance=ExtResource( 24 )]
+
+[node name="Agaclar" type="Sprite" parent="."]
+position = Vector2( 149.829, -4.02794 )
+texture = ExtResource( 11 )
+
+[node name="ZeminVeSis" type="Sprite" parent="."]
+position = Vector2( 30, -3 )
+texture = ExtResource( 9 )
+
+[node name="ZeminVeSis2" type="Sprite" parent="ZeminVeSis"]
+show_behind_parent = true
+position = Vector2( -100, 0 )
+texture = ExtResource( 9 )
+
+[node name="DuvarLv2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -74.9965, 14.9801 )
+texture = ExtResource( 18 )
+
+[node name="DuvarLv2_1" type="Sprite" parent="DuvarLv2"]
+position = Vector2( -108.672, 0.00746727 )
+texture = ExtResource( 18 )
+
+[node name="DuvarLv3" type="Sprite" parent="."]
+visible = false
+position = Vector2( -77.9041, 13.0311 )
+texture = ExtResource( 17 )
+
+[node name="DuvarLv3_1" type="Sprite" parent="DuvarLv3"]
+position = Vector2( -111.851, -0.00737953 )
+texture = ExtResource( 17 )
+
+[node name="upgrade3" type="Sprite" parent="."]
+visible = false
+position = Vector2( -49.9791, 6.05913 )
+texture = ExtResource( 6 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( -21.5114, 4.76477 )
+scale = Vector2( 1.63001, 142.972 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="."]
+position = Vector2( -41.1621, 3.48321 )
+scale = Vector2( 1.63001, 142.972 )
+shape = SubResource( 1 )
+
+[node name="MapCollider" type="CollisionShape2D" parent="."]
+position = Vector2( -159.664, 5.4423 )
+scale = Vector2( 3.87001, 142.972 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+position = Vector2( 59.714, 41.728 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="Area2D" type="Area2D" parent="." groups=[
+"Castle",
+]]
+position = Vector2( 1.70782, -0.152836 )
+scale = Vector2( 1.04, 1 )
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( -23.6312, 6.61841 )
+shape = SubResource( 3 )
+
+[node name="melee_stop" type="StaticBody2D" parent="."]
+collision_layer = 32
+collision_mask = 32
+
+[node name="melee_stop1" type="CollisionShape2D" parent="melee_stop"]
+position = Vector2( -2.28688, 23.448 )
+rotation = 1.5708
+shape = SubResource( 4 )
+
+[node name="melee_stop2" type="CollisionShape2D" parent="melee_stop"]
+position = Vector2( 12.2582, 15.1333 )
+shape = SubResource( 5 )
+
+[node name="upgrade1" type="Sprite" parent="."]
+position = Vector2( -27.0003, -1.94898 )
+texture = ExtResource( 4 )
+
+[node name="upgrade2" type="Sprite" parent="."]
+position = Vector2( -27.0405, -15.8591 )
+texture = ExtResource( 5 )
+
+[node name="ArmyLv1" type="Sprite" parent="."]
+position = Vector2( -87.9587, 13.006 )
+texture = ExtResource( 12 )
+
+[node name="ArmyLv2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -88.7494, 11.0375 )
+texture = ExtResource( 1 )
+
+[node name="ArmyLv3" type="Sprite" parent="."]
+visible = false
+position = Vector2( -86.3114, 8.17133 )
+texture = ExtResource( 10 )
+
+[node name="LumberMillLv1" type="Sprite" parent="."]
+position = Vector2( -153.973, 15.1003 )
+texture = ExtResource( 20 )
+
+[node name="LumberMillLv2" type="Sprite" parent="."]
+position = Vector2( -154.615, 12.0875 )
+texture = ExtResource( 15 )
+
+[node name="LumberMillLv3" type="Sprite" parent="."]
+position = Vector2( -155.469, 11.1833 )
+texture = ExtResource( 16 )
+
+[node name="TowerLvTasLv1" type="Sprite" parent="."]
+visible = false
+position = Vector2( -31.0231, 9.06065 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 19 )
+
+[node name="TowerLvTasLv2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -30.9907, -15.8996 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 14 )
+
+[node name="koyukisim" type="Sprite" parent="TowerLvTasLv2"]
+position = Vector2( -0.00917625, 10.9197 )
+z_index = -1
+z_as_relative = false
+texture = ExtResource( 13 )
+
+[node name="TowerLvTasLv3" type="Sprite" parent="."]
+visible = false
+position = Vector2( -30.999, -24.8876 )
+z_index = 2
+z_as_relative = false
+texture = ExtResource( 25 )
+
+[node name="TowerLv1" type="Sprite" parent="."]
+position = Vector2( -29.9419, 11.976 )
+texture = ExtResource( 22 )
+
+[node name="gate" type="Sprite" parent="."]
+position = Vector2( -22.0523, 14.9822 )
+z_index = 3
+z_as_relative = false
+texture = ExtResource( 21 )
+
+[node name="GateLv2" type="Sprite" parent="."]
+visible = false
+position = Vector2( -20.0657, 12.0245 )
+z_index = 3
+z_as_relative = false
+texture = ExtResource( 8 )
+
+[node name="GateLv3" type="Sprite" parent="."]
+visible = false
+position = Vector2( -19.0743, 12.0503 )
+z_index = 3
+z_as_relative = false
+texture = ExtResource( 23 )
+
+[node name="repairmen_check" type="Area2D" parent="." groups=[
+"Barracks",
+]]
+position = Vector2( -102.008, 9.57716 )
+collision_layer = 131072
+collision_mask = 2147483648
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="repairmen_check"]
+shape = SubResource( 6 )
+
+[node name="WarriorCollider" type="StaticBody2D" parent="."]
+collision_layer = 16384
+collision_mask = 16384
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="WarriorCollider"]
+position = Vector2( 59.714, 41.728 )
+rotation = 1.5708
+shape = SubResource( 2 )
+
+[node name="melee_stop3" type="CollisionShape2D" parent="WarriorCollider"]
+position = Vector2( 52.8448, 14.4254 )
+shape = SubResource( 5 )
+
+[node name="melee_stop4" type="CollisionShape2D" parent="WarriorCollider"]
+position = Vector2( -161.179, 14.4254 )
+shape = SubResource( 5 )
+
+[node name="WarriorHealer" type="Area2D" parent="."]
+position = Vector2( -75.274, 2.83162 )
+collision_layer = 2147500032
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WarriorHealer"]
+position = Vector2( -46.0139, 7.31503 )
+shape = SubResource( 7 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/MessengerAttackAlert.ogg-52777399171e55e5197e6152267fea42.oggstr"
+
+[deps]
+
+source_file="res://SFX/MessengerAttackAlert.ogg"
+dest_files=[ "res://.import/MessengerAttackAlert.ogg-52777399171e55e5197e6152267fea42.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0
